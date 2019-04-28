@@ -1,3 +1,5 @@
+import { SwapiPeople } from './models/people';
+import { PeopleService } from './services/swapi/people.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tomato-todoist';
+  people: SwapiPeople.People
+  constructor(private ps: PeopleService){
+    ps.getPeople().subscribe((data) => {
+      this.people = data;
+      console.log(data);
+    })
+  }
 }
