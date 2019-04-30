@@ -1,5 +1,5 @@
 ## What is SWAPI?
-SWAPI is the Star Wars AP
+SWAPI is the Star Wars AP.
 For more inforation https://swapi.co/
 
 # RxngSample
