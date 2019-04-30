@@ -1,3 +1,7 @@
+##What is SWAPI?
+SWAPI is the Star Wars AP
+For more inforation https://swapi.co/
+
 # RxngSample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
