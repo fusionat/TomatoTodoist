@@ -14,6 +14,9 @@ export class AppComponent {
     ps.getAll().subscribe((data) => {
       this.characters = data;
       console.log(data);
-    })
+    });
+    ps.getById(1).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
