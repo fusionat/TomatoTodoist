@@ -19,5 +19,5 @@ export interface Starships {
   count: number;
   next?: any;
   previous?: any;
-  results: Result[];
+  results: Starship[];
 }

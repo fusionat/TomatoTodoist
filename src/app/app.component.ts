@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'tomato-todoist';
   characters: Characters
   constructor(private ps: PeopleService){
-    ps.getPeople().subscribe((data) => {
+    ps.getAll().subscribe((data) => {
       this.characters = data;
       console.log(data);
     })
