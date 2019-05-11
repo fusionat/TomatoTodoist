@@ -8,15 +8,15 @@ import {
 import { environment } from '../../environments/environment';
 import * as fromPeople from './people.reducer';
 
-export interface State {
+export interface AppState {
 
   people: fromPeople.State;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export const reducers: ActionReducerMap<AppState> = {
 
   people: fromPeople.reducer,
 };
 
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];

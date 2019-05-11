@@ -17,7 +17,7 @@ export interface Character {
   url: string;
 }
 
-export interface Characters {
+export class Characters {
   count: number;
   next: string;
   previous?: any;
