@@ -1,3 +1,8 @@
 <button (click)="onClick()">OK</button>
 
+
+<ul *ngIf="characters$">
+  <li *ngFor="let item of (characters$ | async).results">{{item.name}}</li>
+</ul>
+
 <router-outlet></router-outlet>

@@ -13,6 +13,8 @@ export const initialState: State = {
 export function reducer(state = initialState, action: PeopleActions): State {
   switch (action.type) {
     case PeopleActionTypes.LoadPeople:
+      return {...state };
+    case PeopleActionTypes.LoadPeopleSuccess:
       return {...state, people: action.payload }
     default:
       return state;

@@ -5,6 +5,8 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from './reducers/index';
 import { LoadPeople } from './actions/people.actions';
 import { getPeople } from './selectors/people.selector';
+import { Observable } from 'rxjs';
+import { async } from 'q';
 
 @Component({
   selector: 'app-root',
@@ -12,23 +14,12 @@ import { getPeople } from './selectors/people.selector';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tomato-todoist';
-  characters: Characters
-  constructor(private ps: PeopleService, private store: Store<AppState>){
-
-    ps.getAll().subscribe((data) => {
-      store.dispatch(new LoadPeople(data))
-      this.characters = data;
-      console.log(data);
-    });
-    ps.getById(1).subscribe((data) => {
-      console.log(data);
-    });
-
+  title = 'SWAPi ANGULAR';
+  characters$: Observable<Characters> = this.store.pipe(select(getPeople));
+  constructor(private store: Store<AppState>){
   }
 
   onClick() {
-    alert(1);
-    this.store.pipe(select(getPeople)).subscribe((s) => console.log(s))
+    this.store.dispatch(new LoadPeople())
   }
 }
