@@ -1,21 +1,21 @@
-import { Action } from '@ngrx/store';
-import { PeopleActions, PeopleActionTypes } from '../actions/people.actions'
-import { Character, Characters } from './../models/people';
+
+import { CharactersActionTypes, CharactersActions } from '../actions/people.actions'
+import { Characters } from '../models/characters';
 
 export interface State {
-  people: Characters
+  characters: Characters
 }
 
 export const initialState: State = {
-  people : new Characters()
+  characters : new Characters()
 };
 
-export function reducer(state = initialState, action: PeopleActions): State {
+export function reducer(state = initialState, action: CharactersActions): State {
   switch (action.type) {
-    case PeopleActionTypes.LoadPeople:
+    case CharactersActionTypes.LoadCharacters:
       return {...state };
-    case PeopleActionTypes.LoadPeopleSuccess:
-      return {...state, people: action.payload }
+    case CharactersActionTypes.LoadCharactersSuccess:
+      return {...state, characters: action.payload }
     default:
       return state;
   }

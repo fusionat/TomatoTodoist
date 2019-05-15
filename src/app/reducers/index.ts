@@ -10,12 +10,12 @@ import * as fromPeople from './people.reducer';
 
 export interface AppState {
 
-  people: fromPeople.State;
+  charcters: fromPeople.State;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
 
-  people: fromPeople.reducer,
+  charcters: fromPeople.reducer,
 };
 
 

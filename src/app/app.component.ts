@@ -1,12 +1,10 @@
-import { Characters } from './models/people';
-import { PeopleService } from './services/swapi/people.service';
+import { Characters } from './models/characters';
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { AppState } from './reducers/index';
-import { LoadPeople } from './actions/people.actions';
-import { getPeople } from './selectors/people.selector';
+import { LoadCharacters } from './actions/people.actions';
+import { getCharacters } from './selectors/characters.selector';
 import { Observable } from 'rxjs';
-import { async } from 'q';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +12,12 @@ import { async } from 'q';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'SWAPi ANGULAR';
-  characters$: Observable<Characters> = this.store.pipe(select(getPeople));
+  title = 'SWAPI ANGULAR';
+  characters$: Observable<Characters> = this.store.pipe(select(getCharacters));
   constructor(private store: Store<AppState>){
   }
 
   onClick() {
-    this.store.dispatch(new LoadPeople())
+    this.store.dispatch(new LoadCharacters())
   }
 }

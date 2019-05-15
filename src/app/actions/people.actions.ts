@@ -1,25 +1,25 @@
 import { Action } from "@ngrx/store";
-import { Characters } from "../models/people";
-import { Character } from "./../models/people";
+import { Characters } from "../models/characters";
+import { Character } from "../models/characters";
 
-export enum PeopleActionTypes {
-  LoadPeople = "[People] Load People",
-  LoadPeopleSuccess = "[People] Load People Success",
-  LoadPersonById = "[People] Load Person By Id"
+export enum CharactersActionTypes {
+  LoadCharacters = "[People] Load People",
+  LoadCharactersSuccess = "[People] Load People Success",
+  LoadCharacterById = "[People] Load Person By Id"
 }
 
-export class LoadPeople implements Action {
-  readonly type = PeopleActionTypes.LoadPeople;
+export class LoadCharacters implements Action {
+  readonly type = CharactersActionTypes.LoadCharacters;
 }
 
-export class LoadPeopleSuccess implements Action {
-  readonly type = PeopleActionTypes.LoadPeopleSuccess;
+export class LoadCharactersSuccess implements Action {
+  readonly type = CharactersActionTypes.LoadCharactersSuccess;
   constructor(public payload: Characters) {}
 }
 
-export class LoadPersonById implements Action {
-  readonly type = PeopleActionTypes.LoadPersonById;
+export class LoadCharacterById implements Action {
+  readonly type = CharactersActionTypes.LoadCharacterById;
   constructor(public payload: Character) {}
 }
 
-export type PeopleActions = LoadPeople | LoadPersonById | LoadPeopleSuccess;
+export type CharactersActions = LoadCharacters | LoadCharacterById | LoadCharactersSuccess;

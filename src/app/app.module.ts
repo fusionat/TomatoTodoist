@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { PeopleEffects } from './effects/people.effects';
+import { EffectsModule } from '@ngrx/effects'; 
+import { CharactersEffects } from './effects/people.effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { PeopleEffects } from './effects/people.effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     HttpClientModule,
-    EffectsModule.forRoot([PeopleEffects])
+    EffectsModule.forRoot([CharactersEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
