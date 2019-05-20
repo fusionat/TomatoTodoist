@@ -7,7 +7,8 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects'; 
 import { CharactersEffects } from './effects/people.effects';
-
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +18,9 @@ import { CharactersEffects } from './effects/people.effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     HttpClientModule,
-    EffectsModule.forRoot([CharactersEffects])
+    EffectsModule.forRoot([CharactersEffects]),
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
