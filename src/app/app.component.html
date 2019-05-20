@@ -3,6 +3,7 @@
 
 <ul *ngIf="characters$">
   <li *ngFor="let item of (characters$ | async).results">{{item.name}}</li>
+  <li>{{(character$ | async).name}}</li>
 </ul>
 
 <router-outlet></router-outlet>

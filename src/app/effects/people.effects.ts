@@ -3,8 +3,7 @@ import { Actions, Effect, ofType } from "@ngrx/effects";
 import { map, mergeMap, catchError } from "rxjs/operators";
 import { CharactorsService } from "./../services/swapi/people.service";
 import { EMPTY } from "rxjs";
-import { LoadCharactersSuccess, LoadCharacters, CharactersActionTypes } from './../actions/people.actions';
-import { Character } from '../models/characters';
+import { LoadCharactersSuccess, CharactersActionTypes } from './../actions/people.actions';
 
 @Injectable()
 export class CharactersEffects {
@@ -20,7 +19,7 @@ export class CharactersEffects {
       this.charactorsService.getAll().pipe(
         map(characters => new LoadCharactersSuccess(characters)),
         catchError(er => {
-          console.log("ERRRROR");
+          console.log("ERRRROR!");
           return EMPTY;
         })
       )

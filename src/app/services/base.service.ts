@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
-export abstract class BaseService<Tbase, Tresult> {
+export abstract class BaseService<TBase, TResult> {
   readonly baseUrl: string = "https://swapi.co/api/";
   readonly httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -15,15 +15,15 @@ export abstract class BaseService<Tbase, Tresult> {
     return `${this.baseUrl}${nameOfResource}/${argument}`;
   }
 
-  getAll(): Observable<Tbase> {
+  getAll(): Observable<TBase> {
     return this.http
-      .get<Tbase>(this.getUrl(this.nameOfResource), this.httpOptions)
+      .get<TBase>(this.getUrl(this.nameOfResource), this.httpOptions)
       .pipe(tap(_ => console.log(_)));
   }
 
-  getById(id: number): Observable<Tresult> {
+  getById(id: number): Observable<TResult> {
     return this.http
-      .get<Tresult>(
+      .get<TResult>(
         this.getUrl(this.nameOfResource, id.toString()),
         this.httpOptions
       )
