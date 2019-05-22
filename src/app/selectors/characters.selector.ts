@@ -5,17 +5,17 @@ import { Character, Characters } from './../models/characters';
 export const selectCharacters = (state: AppState) => state.charcters;
 export const getCharacters = createSelector(
   selectCharacters,
-  charcters => charcters.characters
+  characters => characters.characters
 )
 
 export const getCharacterByName = createSelector(
   getCharacters,
-  (charcters: Characters, proms) => {
-    if (!charcters.results){
+  (characters: Characters, proms) => {
+    if (!characters.results){
       return;
     }
 
-    let filterResult = charcters.results.filter( (character: Character) => {
+    let filterResult = characters.results.filter( (character: Character) => {    
       return character.name.toLowerCase() === proms.name.toLowerCase();
     })
 
