@@ -1,0 +1,8 @@
+<button (click)="onClick()" mat-raised-button color="primary" color="primary">OK</button>
+
+<mat-nav-list>
+  <a mat-list-item *ngFor="let item of (characters$ | async).results">
+    <img matListAvatar src="assets/avatars/dv.png" alt="Darth Vader">
+    <h3 matLine> {{item.name}} </h3>
+  </a>
+<mat-nav-list>

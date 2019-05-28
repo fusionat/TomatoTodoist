@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CharactersEffects } from './effects/people.effects';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PeopleModule } from './components/people/people.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     EffectsModule.forRoot([CharactersEffects]),
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PeopleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,2 @@
-<button (click)="onClick()" mat-raised-button color="primary" color="primary">OK</button>
-<ul *ngIf="characters$">
-  <li *ngFor="let item of (characters$ | async).results">{{item.name}}</li>
-  <li>{{(character$ | async).name}}</li>
-</ul>
+<app-people-list></app-people-list>
 <router-outlet></router-outlet>
