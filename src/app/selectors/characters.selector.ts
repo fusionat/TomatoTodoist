@@ -1,7 +1,8 @@
 
 import { AppState } from '../reducers/index';
 import { createSelector } from '@ngrx/store';
-import { Character, Characters } from './../models/characters';
+import { Character } from './../models/characters';
+import { GroupModels } from './../models/group-models.model';
 export const selectCharacters = (state: AppState) => state.charcters;
 export const getCharacters = createSelector(
   selectCharacters,
@@ -10,7 +11,7 @@ export const getCharacters = createSelector(
 
 export const getCharacterByName = createSelector(
   getCharacters,
-  (characters: Characters, proms) => {
+  (characters: GroupModels<Character>, proms) => {
     if (!characters.results){
       return;
     }

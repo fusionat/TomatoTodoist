@@ -1,13 +1,14 @@
 
 import { CharactersActionTypes, CharactersActions } from '../actions/people.actions'
-import { Characters } from '../models/characters';
+import { GroupModels } from './../models/group-models.model';
+import { Character } from './../models/characters';
 
 export interface State {
-  characters: Characters
+  characters: GroupModels<Character>
 }
 
 export const initialState: State = {
-  characters : new Characters()
+  characters : new GroupModels<Character>()
 };
 
 export function reducer(state = initialState, action: CharactersActions): State {

@@ -1,4 +1,5 @@
-export interface Character {
+import { BaseModel } from './base.model';
+export interface Character extends BaseModel {
   name: string;
   height: string;
   mass: string;
@@ -14,12 +15,4 @@ export interface Character {
   starships: string[];
   created: Date;
   edited: Date;
-  url: string;
-}
-
-export class Characters {
-  count: number;
-  next: string;
-  previous?: any;
-  results: Character[];
 }

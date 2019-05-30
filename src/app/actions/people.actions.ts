@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
-import { Characters } from "../models/characters";
 import { Character } from "../models/characters";
+import { GroupModels } from './../models/group-models.model';
 
 export enum CharactersActionTypes {
   LoadCharacters = "[People] Load People",
@@ -14,7 +14,7 @@ export class LoadCharacters implements Action {
 
 export class LoadCharactersSuccess implements Action {
   readonly type = CharactersActionTypes.LoadCharactersSuccess;
-  constructor(public payload: Characters) {}
+  constructor(public payload: GroupModels<Character>) {}
 }
 
 export class LoadCharacterById implements Action {
