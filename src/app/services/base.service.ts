@@ -1,7 +1,8 @@
 import { HttpHeaders } from "@angular/common/http";
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { catchError, map, tap } from "rxjs/operators";
+import { tap, flatMap } from "rxjs/operators";
+import { Helpers } from "./../helpers/helpers";
 
 export abstract class BaseService<TBase, TResult> {
   readonly baseUrl: string = "https://swapi.co/api/";
@@ -18,7 +19,14 @@ export abstract class BaseService<TBase, TResult> {
   getAll(): Observable<TBase> {
     return this.http
       .get<TBase>(this.getUrl(this.nameOfResource), this.httpOptions)
-      .pipe(tap(_ => console.log(_)));
+      .pipe(
+        flatMap((obj: any) => {
+          obj.results.forEach(element => {
+            element.id = Helpers.getIdFromUrl(element.url);
+          });
+          return of(obj);
+        })
+      );
   }
 
   getById(id: number): Observable<TResult> {
