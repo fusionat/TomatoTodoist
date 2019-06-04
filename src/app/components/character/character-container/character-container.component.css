@@ -2,11 +2,15 @@
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between
 }
 
 .character-list {
   width: auto;
+  flex-grow: 1;
+}
+
+.character-details {
+  flex-grow: 3;
 }
 
 @media screen and (max-width: 500px) {
