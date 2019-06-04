@@ -1,0 +1,16 @@
+.character-container {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+.character-list {
+  width: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .character-list {
+    width: 100%;
+  }
+}
