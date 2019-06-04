@@ -13,11 +13,11 @@ import {
 import { GroupModels } from './../../../models/group-models.model';
 
 @Component({
-  selector: "app-people-list",
-  templateUrl: "./people-list.component.html",
-  styleUrls: ["./people-list.component.css"]
+  selector: "app-character-list",
+  templateUrl: "./character-list.component.html",
+  styleUrls: ["./character-list.component.css"]
 })
-export class PeopleListComponent implements OnInit {
+export class CharacterListComponent implements OnInit {
   characters$: Observable<GroupModels<BaseModel>> = this.store.pipe(select(getCharacters));
   character$: Observable<Character> = this.store.pipe(
     select(getCharacterByName, { name: "Luke Skywalker" })
