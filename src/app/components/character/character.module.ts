@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CharacterListComponent } from "./character-list/character-list.component";
 import { CharacterContainerComponent } from "./character-container/character-container.component";
 import { CharacterDetailsComponent } from './character-details/character-details.component';
-
+import { AppRoutingModule } from './../../app-routing.module';
 @NgModule({
   declarations: [
     CharacterListComponent,
@@ -15,6 +15,6 @@ import { CharacterDetailsComponent } from './character-details/character-details
     CharacterDetailsComponent
   ],
   exports: [CharacterListComponent,CharacterContainerComponent],
-  imports: [CommonModule, MatListModule, MatIconModule, MatButtonModule, MatCardModule]
+  imports: [CommonModule, MatListModule, MatIconModule, MatButtonModule, MatCardModule, AppRoutingModule]
 })
 export class CharacterModule {}

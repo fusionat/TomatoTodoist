@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,9 +23,11 @@ import { CharacterModule } from './components/character/character.module';
     EffectsModule.forRoot([CharactersEffects]),
     MatButtonModule,
     BrowserAnimationsModule,
-    CharacterModule
+    CharacterModule,
+    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }

@@ -19,7 +19,7 @@ export class CharactersEffects {
       this.charactorsService.getAll().pipe(
         map(characters => new LoadCharactersSuccess(characters)),
         catchError(er => {
-          console.log("ERRRROR!");
+          console.log(`ERRRROR! ${er}`);
           return EMPTY;
         })
       )

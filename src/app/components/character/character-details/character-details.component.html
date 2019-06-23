@@ -1,16 +1,23 @@
-<mat-card class="character-list">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item> Name: </mat-list-item>
-      <mat-list-item> Birth Year: </mat-list-item>
-      <mat-list-item> Height: </mat-list-item>
-      <mat-list-item> Hair color: </mat-list-item>
-      <mat-list-item> Eye color:  </mat-list-item>
-     </mat-list>
-  </mat-card-content>
-</mat-card>
+<ng-container *ngIf="character$ | async as character">
+  <mat-card class="character-details">
+    <mat-card-header>
+      <img
+        mat-card-avatar
+        src="https://starwars-visualguide.com/assets/img/characters/{{
+          character.id
+        }}.jpg"
+        alt="{{ character.name }}"
+      />
+      <mat-card-title>{{ character.name }}</mat-card-title>
+      <mat-card-subtitle>{{ character.gender }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item> Birth Year: {{ character.birth_year }}</mat-list-item>
+        <mat-list-item> Height: {{ character.height }}</mat-list-item>
+        <mat-list-item> Hair color: {{ character.hair_color }}</mat-list-item>
+        <mat-list-item> Eye color: {{ character.eye_color }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
